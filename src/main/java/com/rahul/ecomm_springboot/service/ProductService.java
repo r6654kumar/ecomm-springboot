@@ -16,7 +16,10 @@ public class ProductService {
         return productRepo.findAll();
     }
 
-    public Optional<Product> getProductById(int productId) {
-        return productRepo.findById(productId);
+    public Product getProductById(int productId) {
+        return productRepo.findById(productId).orElse(null);
+    }
+    public Product addNewProduct(Product newProduct){
+        return productRepo.save(newProduct);
     }
 }
