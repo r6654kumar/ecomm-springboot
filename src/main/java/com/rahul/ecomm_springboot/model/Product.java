@@ -1,5 +1,6 @@
 package com.rahul.ecomm_springboot.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Product {
     private String brand;
     private String category;
     private BigDecimal price;
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
     private Date releasedate;
     private boolean available;
     private int quantity;
