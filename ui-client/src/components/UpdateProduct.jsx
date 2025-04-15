@@ -22,7 +22,7 @@ const UpdateProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/product/${id}`
+          `http://localhost:8080/api/products/${id}`
         );
 
         setProduct(response.data);
