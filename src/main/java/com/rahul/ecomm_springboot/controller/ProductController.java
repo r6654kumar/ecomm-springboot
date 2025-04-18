@@ -82,4 +82,10 @@ public class ProductController {
         } else
             return new ResponseEntity<>("Failed to delete", HttpStatus.BAD_REQUEST);
     }
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword){
+        System.out.println("Searching with"+keyword);
+        List<Product> products = service.searchProducts(keyword);
+        return new ResponseEntity<>(products,HttpStatus.OK);
+    }
 }
